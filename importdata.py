@@ -1,21 +1,19 @@
-# import csv
-#
-# with open('data.csv') as csvfile:
-#     mydata = list(csv.reader(csvfile, delimiter=';'))
-#     #mydata=map(list, zip(*mydata))
+import csv
+import json
+from bottle import run, route, template, request
 
-from bottle import run, route, template,request
-    # @route('/')
-    # def index():
-    #     # return {'data':mydata}
-    #  return template('creat_checkbox')
+with open('data.csv') as csvfile:
+    mydata = list(csv.reader(csvfile, delimiter=';'))
+    #mydata=map(list, zip(*mydata))
+    @route('/new')
+    def index():
+        # return {'data':mydata}
+     return template('disp_table',rows=mydata)
+
+
 @route('/new')
 def add_new():
-    return template('creat_checkbox')
+    return template('disp_table',rows=mydata)
 
-    @route('/new', method='POST')
-    def add_new():
-        request.forms.get()
 
-    return template('creat_checkbox')
-    run(host='localhost',debug=True)
+run(host='localhost', port=8090, debug=True)
