@@ -3,8 +3,7 @@ An assessment of RB company for their candidate of junior software developer
 
 Usage instruction: 
 Checkbox.py is the main file, simply run this file. 
-It works as follows: first a checkbox will popup and you could choose your way of sorting,  
-then the sorted data will show up accordingly when you make a call to your localhost.
+It works as follows: first a checkbox will popup and you could choose your way of sorting,  then the sorted data will show up accordingly when you make a call to your localhost.
 
 Difficulties:
 1. In checkbox.py line 105 i have to assign a specific port, and change it every time when i run the code. Otherwise it shows error.
