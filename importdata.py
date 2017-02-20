@@ -15,6 +15,7 @@ def add_new():
 
     @route('/new', method='POST')
     def add_new():
-        p = request.forms.get()
+        request.forms.get()
 
+    return template('creat_checkbox')
     run(host='localhost',debug=True)
