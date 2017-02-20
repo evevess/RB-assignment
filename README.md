@@ -6,13 +6,13 @@ Checkbox.py is the main file, simply run this file.
 It works as follows: first a checkbox will popup and you could choose your way of sorting,  then the sorted data will show up accordingly when you make a call to your localhost.
 
 Difficulties:
-1. In checkbox.py line 105 i have to assign a specific port, and change it every time when i run the code. Otherwise it shows error.
+a.In checkbox.py line 105 i have to assign a specific port, and change it every time when i run the code. Otherwise it shows error.
 
-2. I created a regular checkbox that is not linked to the webpage and I am wondering if there is a specific bottle web framework user interface available? or if there is a way to link the checkbox to bottle webpage?
+b.I created a regular checkbox that is not linked to the webpage and I am wondering if there is a specific bottle web framework user interface available? or if there is a way to link the checkbox to bottle webpage?
 
-3. I couldn't find a way to show the data with requested sorting when a call to localhost is made. Mine currently works as: first showing the requested sorting and then show the localhost address, when a call is made the sorted data will be shown. Any suggestion how can I fix this?
+c. I couldn't find a way to show the data with requested sorting when a call to localhost is made. Mine currently works as: first showing the requested sorting and then show the localhost address, when a call is made the sorted data will be shown. Any suggestion how can I fix this?
 
-4.Need further research: 
+d. Need further research: 
 What does assumptions, configuration, consistency, PEP8 specifically imply here?
 For example, is 'user can only choose one way of sorting at one time' an assumption or not and if it is, how can I justify it?
 
