@@ -6,10 +6,12 @@ with open('data.csv') as csvfile:
     mydata = list(csv.reader(csvfile, delimiter=';'))
     sort = mydata
 
+# route the original data with web check button
 @route('/origin')
 def origin():
     return template('disp_table',rows=mydata)
 
+#the codes from line 15-35 do not function, any help is appreciated
 @route('/origin',method='POST')
 def origin():
         x=str(request.forms.get('submit'))
@@ -28,10 +30,9 @@ def origin():
                     else:
                         if x == '5':
                              sort = sorted(mydata[1:], key=operator.itemgetter(2), reverse=True)
-
-        mydata[1:]=sort
-
+                             mydata[1:]=sort
         return {'return somthing'+\
                 x}
+
 run(port=8453, debug=True)
 

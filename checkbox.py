@@ -6,19 +6,15 @@ import operator
 class MyGUI:
 
     def __init__(self):
-        with open('data.csv') as csvfile:
-            mydata = list(csv.reader(csvfile, delimiter=';'))
 
         # Create the main window.
         self.main_window = Tkinter.Tk()
 
-        # Create two frames. One for the Radiobuttons
-        # and another for the regular Button widgets.
+        # Create a frame for the Radiobuttons
         self.top_frame = Tkinter.Frame(self.main_window)
         self.bottom_frame = Tkinter.Frame(self.main_window)
 
-        # Create an IntVar object to use with
-        # the Radiobuttons.
+        # Create an IntVar object to use with the Radiobuttons.
         self.radio_var = Tkinter.IntVar()
 
         # Set the intVar object to 1.
@@ -58,28 +54,33 @@ class MyGUI:
         self.ok_button.pack(side='left')
         self.quit_button.pack(side='left')
 
-        # # Pack the frames.
+        #  Pack the frames.
         self.top_frame.pack()
         self.bottom_frame.pack()
 
         # Start the mainloop.
         Tkinter.mainloop()
-    # The show_choice
 
+        # The show_choice
     def show_choice(self):
+
+        #process the csv data: into a list
         with open('data.csv') as csvfile:
             mydata = list(csv.reader(csvfile, delimiter=';'))
-
             sort=mydata
-            from bottle import run, route, template
 
+            #route the original data
+            from bottle import run, route, template
             @route('/')
             def original():
                 return template('distable', rows=sort)
         x=str(self.radio_var.get())
+
+        #shouw your option as a reminder
         print ('You selected option ' + \
         x)
 
+        #sorting: with variable x as input from checkbox
         if x == '1':
             sort = sorted(mydata[1:], key=operator.itemgetter(0))
         else:
@@ -94,18 +95,13 @@ class MyGUI:
                     else:
                         if x == '5':
                              sort = sorted(mydata[1:], key=operator.itemgetter(2), reverse=True)
-
         mydata[1:]=sort
         self.main_window.destroy()
 
-
+        # route the sorted date according to user's choice
         @route('/sorting')
-
         def sorting():
-
             return template('distable', rows=mydata)
-
-
         run(port=8648,debug=True, update=True)
 
 
