@@ -2,8 +2,9 @@
 An assessment of RB company for their candidate of junior software developer
 
 Usage instruction: 
-Checkbox.py is the main file, simply run this file. 
-It works as follows: first a checkbox will popup and you could choose your way of sorting,  then the sorted data will show up accordingly when you make a call to your localhost.
+Checkbox.py and importdata.py are the main files, simply run this files seperately. 
+Checobox.py works as follows: first a checkbox will popup and you could choose your way of sorting,  then the sorted data will show up accordingly when you make a call to your localhost.
+importdata.py linked the webpage with checkbox, however, i have not find a way of read the checkbox value.
 
 Difficulties:
 
