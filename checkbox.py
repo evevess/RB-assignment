@@ -73,9 +73,9 @@ class MyGUI:
             sort=mydata
             from bottle import run, route, template
 
-            @route('/original')
+            @route('/')
             def original():
-                return template('disp_table', rows=sort)
+                return template('distable', rows=sort)
         x=str(self.radio_var.get())
         print ('You selected option ' + \
         x)
@@ -96,14 +96,18 @@ class MyGUI:
                              sort = sorted(mydata[1:], key=operator.itemgetter(2), reverse=True)
 
         mydata[1:]=sort
+        self.main_window.destroy()
+
 
         @route('/sorting')
 
         def sorting():
 
-            return template('disp_table', rows=mydata)
-        run(port=8401,debug=True, update=True)
-        self.main_window.destroy()
+            return template('distable', rows=mydata)
+
+
+        run(port=8648,debug=True, update=True)
+
 
     def clear(self):
         self.input_text.delete(0, len(self.input_text.get()))
